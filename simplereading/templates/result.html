@@ -1,0 +1,72 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>Wang Tong Project</title>
+<link href="./css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="defult">
+	<header id="head_div">
+		<h1 id="project_title">Simplifier</h1>
+	</header>
+	<nav id="nav_div">
+		<ul id="nav_list">
+			<li><a href="./index.html">Home page </a></li>
+			<li><a href="./admin.html">Admin Service</a></li>
+		</ul>
+	</nav>
+	<div id="main_container">
+		<h1>Input your complex text and return simplified ones:</h1>
+		<table id="tb_result" >
+				<tr>
+					<th>Original Text</th>
+					<th>Simplfied Text & Grade</th>
+				</tr>
+				<tr>
+					<td rowspan="2"><textarea id="txt_original" rows="50" cols="100"></textarea>
+					</td>
+					<td>
+					<div><input type="submit" class="btn_grade" name="submit" alt="grade"
+						value="Grade it !">
+					<select class="drop_grade">
+							<option value="Grade">Grade</option>
+							<option value="Bad">Bad</option>
+							<option value="Good">Good</option>
+							<option value="Excellent">Excellent</option>
+					</select></div><textarea id="txt_original" rows="25" cols="100"></textarea></td>
+				</tr>
+
+				<tr>
+					<td>
+					<div><input type="submit" class="btn_grade" name="submit" alt="grade" 
+								value="Grade it !"><select class="drop_grade">
+							<option value="Grade">Grade</option>
+							<option value="Bad">Bad</option>
+							<option value="Good">Good</option>
+							<option value="Excellent">Excellent</option>
+					</select></div><textarea id="txt_original" rows="25" cols="100"></textarea></td>					
+				</tr>
+			</table>
+
+			<form method="get" action="index.html">
+
+				<input type="submit" id="btn_test" name="submit" alt="new task"
+					onclick="location.href='index.html';" value="New task !" />
+
+			</form>
+			<dl>
+				<dt>Technology of web app:</dt>
+				<dd>HTML, javascript, jQuery, AJAX, .NET</dd>
+				<dt>Database:</dt>
+				<dd>SQL server, orcle, mysql, D-linq</dd>
+				<dt>Technology of map app:</dt>
+				<dd>ArcGIS Server, ArcGIS SDE, ArcGIS Desktop</dd>
+				<dt>Computer Vision:</dt>
+				<dd>openCV</dd>
+				<dt>Big Data:</dt>
+				<dd>Spark</dd>
+			</dl>
+			<input id="btn_test" type="button" value="Test Button">
+	</div>
+	<footer id="footer_div"> &copy; Copyright 2016 | All rights Reserved</footer>
+</body>
+</html>

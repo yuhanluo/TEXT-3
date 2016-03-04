@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#header {    height: 130px;
+    padding-left :300px;  
+    padding-top :60px;    
+    background-image:url("cat-at-computer.jpg");
+    background-repeat: no-repeat;
+    background-position-x: 30px;
+    
+}
+
+table{
+    width: 95%; margin:0px auto 15px auto !important;
+    border-spacing: 0;
+    border-style: groove;
+    border-width: 1px 0 0 1px;
+    border-color: #cdbff1;
+    color: #6020a1;
+}
+
+table td {
+    text-align: left;
+    line-height: 23px;
+    padding: 5px 25px;
+    border-style: groove;
+    border-width: 0 1px 1px 0px;
+    border-color: #cdbff1;
+}
+
+.table tr:hover, tr:focus, tr:active {
+    background-color: yellow;
+}
+
+.table th {
+    height: 28px;
+    line-height: 28px;
+    font-weight: normal;
+    text-align: center;
+    font-weight: bolder;
+    border-style: groove;
+    border-width: 0 1px 1px 0px;
+    border-color: #cdbff1;
+    background-color: #e5def5;
+}
+
+body {
+    background-image: url("books.jpg");
+    
+}
+
+input#search    {
+padding :32px; 
+background-image:url("catclaw.png");
+background-repeat: no-repeat;
+width:60px;
+height:60px;
+border: 10;
+}
+
+input#search1    {
+padding :50px; 
+background-image:url("newtask.png");
+background-repeat: no-repeat;
+width:93px;
+height:140px;
+border: 10;
+}
+</style>
+
+
+    <!-- the head section -->
+   <head >
+        <title>Simplifier results</title>
+        
+    </head>   
+    <!-- the body section -->
+    <body>
+        <div id="header" class="main_contain shadow">
+            <header><h1 style="font-family: 'Comic Sans MS','Papyrus','Chiller'; font-weight: 900;">                    
+                    Simplify you text here!</h1></header>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div>
+                        <ul class="nav navbar-nav">
+                            <li><a href="../view/index.php">Home Page</a></li>
+                            <li><a href="../admin/index.php">Admin Service</a></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+ 
+<h1>Input your complex text and return simplified ones: </h1>
+
+
+<table>
+
+  <tr>
+    <th>Original Text</th>
+    <th>Simplfied Text</th>
+	<th>Grade</th>
+  </tr>
+  
+  <tr>
+    <td><img src="catconfuse.jpeg" alt="kitty-confuse" style="width:220px;height:170px;"></td>
+    <td><img src="catfun (2).jpg" alt="happy kitty" style="width:220px;height:170px;"></td>
+	<td><img src="haha.jpg" alt="haha" style="width:220px;height:170px;"></td>
+  </tr>
+  
+  <tr>
+
+    <th rowspan="2"><input type="text" name="orgn" /></td>
+    <td> <input type="text" name="simp" /></td>
+	<td> 
+	<select>
+	  <option value="Grade">Grade</option>
+	  <option value="Bad">Bad</option>
+	  <option value="Good">Good</option>
+	  <option value="Excellent">Excellent</option> 
+	</select>	
+	<input type="submit" id="search" name="submit" alt="grade" value="">
+	
+	</td>
+   </tr>
+   
+   <tr>
+    <td><input type="text" name="simp" /></td>
+	<td> 
+	<select>
+	  <option value="Grade">Grade</option>
+	  <option value="Bad">Bad</option>
+	  <option value="Good">Good</option>
+	  <option value="Excellent">Excellent</option> 
+	</select>
+	<input type="submit" id="search" name="submit" alt="grade" value="">
+	</td>
+  </tr>
+  
+</table>
+
+<form method="get" action="body1.html">
+
+<input type="submit" id="search1" name="submit" alt="new task"  onclick="location.href='body1.html';" value="" />
+
+</form>
+
+
+<footer>
+    <p class="copyright">
+        &copy; <?php echo date("Y"); ?> Simplifier Project. 
+    </p>
+    <p>Team members:
+    <br\>T Wang (PL), N Lu, YH Lou, C Fakhry,X Ding
+	</p>
+	<p>
+	Photos sources: 
+	<br>http://www.imgmob.net/cat-reading-a-book.html;
+	<br>http://www.unmotivating.com/42-cats-that-need-your-attention-exactly-when-you-start-reading/;
+	<br>www.sodahead.com;
+	<br>www.6die.com
+    </p>
+</div>
+</footer>
+
+</body>
+</html>
