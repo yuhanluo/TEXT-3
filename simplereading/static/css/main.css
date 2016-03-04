@@ -12,39 +12,22 @@ body {
     font: 75% georgia, sans-serif;
     line-height: 1.88889;
     color: #555753;
-    background-size: cover;
+    background: #fff url(blossoms.jpg) no-repeat bottom right;
     margin: 0;
     padding: 0;
-    background-color:#005A31;
 }
-.float_left{
-	display:block;
-	float:left;
-}
-.float_right{
-	display:block;
-	float:right;
-}
+
 p {
     margin-top: 0;
     text-align: justify;
 }
 
-h3 {
+h1, h3 {
     font: italic bold georgia, sans-serif;
     letter-spacing: 1px;
     margin-bottom: 0;
-    
+    color: #7D775C;
 }
-
-h1{
-    font: italic bold georgia, sans-serif;
-    font-weight: bold;
-    margin-bottom: 0px;
-    letter-spacing: 1px;
-    
-    
-    }
 
 a:link {
     font-weight: bold;
@@ -77,11 +60,12 @@ dt {
 }
 
 li {
-    line-height: 1.5em;
+    line-height: 1.3em;
     padding-top: 5px;
     margin-bottom: 5px;
     list-style-type: none;
 }
+
 ol li {
     list-style-type: lower-roman;
 }
@@ -91,17 +75,18 @@ textarea{
 
 table {
     border-spacing: 0;   
+    margin-left:100px;
     border-style: groove;
-    border-width: 0px 0 0 0px;
+    border-width: 2px 0 0 2px;
     border-color: #cdbff1;
 }
 
 td {
     text-align:left;
     line-height: 23px;
-    padding:10px 10px 5px 10px;
+    padding:5px;
     border-style:groove ;
-    border-width: 0 0px 0px 0px;
+    border-width: 0 2px 2px 0px;
     border-color: #cdbff1;
 }
 
@@ -109,12 +94,11 @@ th {
 
     height: 28px;
     line-height: 28px;
-    text-indent:10px;
     font-weight: normal;
-    text-align: left;
+    text-align: center;
     font-weight:bolder;
     border-style: groove;
-    border-width: 0 0px 0px 0px;
+    border-width: 0 2px 2px 0px;
     border-color: #cdbff1;
 }
 
@@ -123,49 +107,38 @@ iframe {
 }
 
 /* special elements */
-
 #head_div{
-	margin-top:5px;
 	width: 100%;
-        height: 201px; padding:0px;
-	background: linear-gradient(to right, white, #A8CD1B);
-	background: #A8CD1B; /* For browsers that do not support gradients */
-        background: -webkit-linear-gradient(to right, white, #A8CD1B); /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(to right, white, #A8CD1B);/* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(to right, white, #A8CD1B); /* For Firefox 3.6 to 15 */
-        background: linear-gradient(to right, white, #A8CD1B); /* Standard syntax (must be last) */
-	background-position:185px 0px;
-
+    height: 185px;
+    background: #2D3956 url(../images/simple.jpg) no-repeat bottom left;
 }
 #project_title
-{	line-height:185px;
-	padding-left: 120px;  
+{
+	padding-left: 300px;
 	font-family: 'Chiller','Papyrus','Comic Sans MS';
 	font-size: 92px;
-	color:#65524D;
+	color:#fff;
 }
 #nav_list
 {
 	padding:0px;
-	height:31px;
+	height:25px;
 	width: 100%;
-	background: #8eb16a;
+	background: #455372;
 	margin:0px;
 	
 }
 #nav_list li
 {
-	font-size:16px;
-        height:26px;
-	width: 150px;
+	height:20px;
+	width: 100px;
 	display:block;
-	background: #005A31;
+	background: #616A7F;
 	float :left;
-        border-style:groove ;
-        border-width: 0 1px 0px 0px;
-        border-color: #fff;
-	text-align:center; 
-	margin:0px 1px 0px 1px;
+    border-style:groove ;
+    border-width: 0 1px 0px 0px;
+    border-color: #cdbff1;
+	text-align:center;
 }
 
 #nav_list li:hover
@@ -175,28 +148,19 @@ iframe {
 #main_container
 {
 	width: 100%;
-	height:690px;
-	background: #e4ebe3;
-	//background-size: cover;//background color only partial cover. 
-}
-#main_container h1
-{
- 
- text-align:center ;
- text-indent:0px ;
- display:block;
+	height:700px;
+	background: #E0E9E9;
 }
 #footer_div{
 	width: 100%;
-	height:50px;
-	background: #022200;
+	height:30px;
+	background: #455372;
 	text-align:center;
 	color:#fff;
-	bottom: 0px; 
 }
 #btn_test
 {
-    
+    margin-left:100px;
 	width: 100px;
 	height:30px;	
     box-shadow: 1px 1px 10px #988F5E;
@@ -204,51 +168,16 @@ iframe {
 
 .btn_grade
 {
-        font: 75% georgia, sans-serif;        
-        font-size:16px;
-	width: 80px;
-	height:30px; margin-right:20px;	
+	width: 100px;
+	height:30px;	
+    box-shadow: 1px 1px 10px #988F5E;
+	float:right;
 }
-
-.txt_main
+.drop_grade
 {
-	width:100%;
-	height:500px;
-	font-size:30px;
+	float:right;
 }
-#tb_index
-{
-	width: 40%;
-	
-}
-
 #tb_result
 {
-	float:center;
-	width: 80%;  margin:0px auto;
+	width: 90%;
 }
-#main_context
-{
-	width:50%;   margin:0px auto;
-}
-#list_grade li
-{
-	float:left; font-size:30px; cursor:pointer;
-}
-
-#h1_title{
-    padding-top: 20px;
-    font-size: 220%;
-    font: italic bold georgia, sans-serif;
-    font-weight: bold;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
-    color: #8B4513;
-    
-    }
-
-#h3_color{
-    
-    color: #8B4513;
-    
-    }
