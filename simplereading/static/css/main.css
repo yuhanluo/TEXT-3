@@ -28,6 +28,7 @@ body {
 p {
     margin-top: 0;
     text-align: justify;
+    color: black;
 }
 
 h3 {
@@ -85,9 +86,22 @@ li {
 ol li {
     list-style-type: lower-roman;
 }
-textarea{
+.form_textarea{
 	resize:none;
+    
 }
+.search-form{
+    font-size: 150%;
+
+}
+.search-form textarea, .post-form input {
+    width: 100%;
+    height: 100%;
+    font-size: 100%;
+    display: block;
+    
+}
+
 
 table {
     border-spacing: 0;   
@@ -107,7 +121,8 @@ td {
 
 th {
 
-    height: 28px;
+    height: 100%;
+    width: 100%
     line-height: 28px;
     text-indent:10px;
     font-weight: normal;
@@ -116,6 +131,10 @@ th {
     border-style: groove;
     border-width: 0 0px 0px 0px;
     border-color: #cdbff1;
+}
+
+p {
+    font-size: 150%;
 }
 
 iframe {
@@ -213,8 +232,8 @@ iframe {
 .txt_main
 {
 	width:100%;
-	height:500px;
-	font-size:30px;
+	height:100%;
+	font-size:100%;
 }
 #tb_index
 {
@@ -226,6 +245,7 @@ iframe {
 {
 	float:center;
 	width: 80%;  margin:0px auto;
+    
 }
 #main_context
 {

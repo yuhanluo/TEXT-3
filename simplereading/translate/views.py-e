@@ -1,0 +1,19 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+from .models import Simple, Original, History
+from .forms import SimplifyForm
+from django.core.urlresolvers import reverse
+
+def index(request):
+    hard_text = SimplifyForm()
+    reverse('result')
+    return render(request, 'index.html', {'hard_text':hard_text})
+
+def result(request, hard_text):
+    
+    hard_text = request.GET[hard_text]
+    hard = Original.objects.get(hard_text=hard_text)
+    simplify = Simple.objects.get(hard=original_id)
+    
+    return render(request, 'result.html', {'simplify' : simplify})
+

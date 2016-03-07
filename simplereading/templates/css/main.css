@@ -20,6 +20,7 @@ body {
 p {
     margin-top: 0;
     text-align: justify;
+    font: 75% georgia, sans-serif;
 }
 
 h1, h3 {
@@ -105,6 +106,19 @@ th {
 iframe {
     width: 80%;
 }
+
+.form textarea {
+    height: 28px;
+    line-height: 28px;
+    font-weight: normal;
+    text-align: center;
+    font-weight:bolder;
+    border-style: groove;
+    border-width: 0 2px 2px 0px;
+    border-color: #cdbff1;
+    
+}
+
 
 /* special elements */
 #head_div{

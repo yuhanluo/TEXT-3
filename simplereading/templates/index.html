@@ -1,50 +1,12 @@
-{% load staticfiles %}
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<title>Wang Tong Project</title>
-	<link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" />
-</head>
-<body >
-<div id="main_context">
-	<header id="head_div">
-		<img class="float_left" src="{% static 'images/simplifier.jpg' %}" height="201px">
-		<h1 id="project_title"  class="float_left"> Simplifier </h1>
-	</header>
-	<nav id="nav_div">
-		<ul id="nav_list">
-			<li><a href="{% url 'index' %}">Home page </a></li>
-			<li><a href="./admin.html">Admin Service</a></li>
-		</ul>
-	</nav>
-	<div id="main_container">
-		<h1 id="h1_title">Intend for people to write/understand texts in a simple way </h1>
-		<table id="tb_result">
-				<tr>
-					<th id="h3_color">Original Text</th>
-					<th id="h3_color">Simplified Text<input type="submit" class="btn_grade float_right" name="submit" alt="grade" value="Simplify"></th>
-				</tr>
-				
-				<tr>
-					<td ><textarea class="txt_main" id="txt_original" ></textarea></td>					
-					<td><textarea  class="txt_main" id="txt_simple" ></textarea></td>
-				</tr>
-				<tr>
-				    <td ></td>					
-					<td>
-						 Grade:  <input type="radio" name="rating" id="rating1" value="1">&#10029;</input>
-						<input type="radio" name="rating" id="rating2" value="2">&#10029;&#10029;</input>
-						<input type="radio" name="rating" id="rating3" value="3">&#10029;&#10029;&#10029;</input>
-						<input type="radio" name="rating" id="rating4" value="4">&#10029;&#10029;&#10029;&#10029;</input>
-						<input type="radio" name="rating" id="rating5" value="5">&#10029;&#10029;&#10029;&#10029;&#10029;</input>
-					</td>				
-				</tr>				
-		</table>			
-	</div>
-	<footer id="footer_div"> T Wang Team @ CS682-3, UMB | &copy;  Copyright 2016 | All rights Reserved
-	<br>Team members: T Wang, N Lu, YH Lou, C Fakhry, X Ding
-	</footer>
-</div>
-</script>
-</body>
-</html>
+
+{% extends 'base.html' %}
+{% block content %}
+
+<form class="search-form" method="GET" >{% csrf_token %}
+    <table id="h3_color" >
+       {{ form.as_table }}
+    <br />
+    <th><input type="submit" value="Simplify"  ></th>
+    </table>
+    </form>
+{% endblock content %}
