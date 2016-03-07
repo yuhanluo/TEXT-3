@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
 import sys
+#import translate.utils
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "simplereading.settings")

@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<form  method="GET" >{% csrf_token %}
+    <table id="h3_color" >
+        {{ form.as_table }}
+        <br />
+        <th><input type="submit" value="Simplify"  ></th>
+    </table>
+</form>
 <p> {{ hard_text|linebreaksbr }}</p>
 
 {% endblock content %}
