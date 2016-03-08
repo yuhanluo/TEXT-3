@@ -5,7 +5,6 @@ from .forms import SimplifyForm, TestForm
 from django.core.urlresolvers import reverse
 import functions, utils
 
-#model= utils.getModel()
 
 def index(request):
 
