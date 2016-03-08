@@ -10,7 +10,6 @@ logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=lo
 import functions as f
 from gensim.models.word2vec import Word2Vec
 
-#model = "hello"
 model = Word2Vec.load_word2vec_format("/Users/luo/desktop/GoogleNews-vectors-negative300.bin.gz", binary = True)
 
 

@@ -1,11 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-<form  method="GET" >{% csrf_token %}
-    <table id="h3_color" >
-        {{ form.as_table }}
-        <br />
-        <th><input type="submit" value="Simplify"  ></th>
-    </table>
+<form id="h3_color" method="GET" >{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Simplify"  >
 </form>
 <p> {{ hard_text|linebreaksbr }}</p>
 

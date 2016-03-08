@@ -3,7 +3,9 @@ from django.http import HttpResponse
 from .models import Simple, Original, History
 from .forms import SimplifyForm, TestForm
 from django.core.urlresolvers import reverse
-import utils
+import functions, utils
+
+#model= utils.getModel()
 
 def index(request):
 
@@ -12,10 +14,13 @@ def index(request):
         return redirect('result', hard_text)
     else:
         form = TestForm()
-        #print utils.model
         return render(request, 'index.html', {'form' : form})
 
 
 def result(request, hard_text):
     form = TestForm()
-    return render(request, 'result.html', {'hard_text': utils.simplify(hard_text), 'form' : form})
+    if 'original_text' in request.GET and request.GET["original_text"]:
+        hard_text = request.GET.get("original_text")
+        return redirect('result', hard_text)
+    else:
+        return render(request, 'result.html', {'hard_text': utils.simplify(hard_text), 'form' : form})
