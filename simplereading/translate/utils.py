@@ -52,5 +52,6 @@ def simplify(s):
         # 	for syn in synonmys:
         # 		if st.stem(w[0]) == st.stem(syn):
         # 			word = w[0]
-    res = res + word + ' '
+
+        res = res + word + ' '
     return res
