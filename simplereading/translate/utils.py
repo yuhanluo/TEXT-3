@@ -10,17 +10,18 @@ logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=lo
 import functions as f
 from gensim.models.word2vec import Word2Vec
 
-model = Word2Vec.load_word2vec_format("/Users/luo/desktop/GoogleNews-vectors-negative300.bin.gz", binary = True)
+#model = Word2Vec.load_word2vec_format("/Users/luo/desktop/GoogleNews-vectors-negative300.bin.gz", binary = True)
+model = Word2Vec.load_word2vec_format("/home/twang/dataset/GoogleNews-vectors-negative300.bin.gz", binary = True)
+
+news_text = brown.words()
+emma = nltk.corpus.gutenberg.words()
+r = nltk.corpus.reuters.words()
+corpus = emma + news_text
+corpus += r
+fdist = nltk.FreqDist(w.lower() for w in corpus)
 
 
 def simplify(s):
-    news_text = brown.words()
-    emma = nltk.corpus.gutenberg.words()
-    r = nltk.corpus.reuters.words()
-    corpus = emma + news_text
-    corpus += r
-    fdist = nltk.FreqDist(w.lower() for w in corpus)
-
     res = ''
     st = LancasterStemmer()
 
