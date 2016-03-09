@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-<form id="h3_color" method="GET" >{% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Simplify"  >
+<table  >
+<form class="search-form" method="GET" >{% csrf_token %}
+    <tr>
+        <td>{{ form.as_p }}</td>
+        <td><textarea rows="20" cols="80" >{{ hard_text|linebreaksbr }}</textarea></td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="Simplify"  ></td>
+    </tr>
 </form>
-<p> {{ hard_text|linebreaksbr }}</p>
+</table>
 
 {% endblock content %}

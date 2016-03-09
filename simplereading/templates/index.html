@@ -1,12 +1,16 @@
 
 {% extends 'base.html' %}
 {% block content %}
-
+<table id="h3_color" >
 <form class="search-form" method="GET" >{% csrf_token %}
-    <table id="h3_color" >
-       {{ form.as_table }}
-    <br />
-    <th><input type="submit" value="Simplify"  ></th>
+   
+      <tr>
+          <td>{{ form.as_p }}</td>
+          <td><textarea rows="20" cols="80" ></textarea></td>
+      </tr>
+      <tr>
+          <td><input type="submit" value="Simplify"  ></td>
+      </tr></form>
+
     </table>
-    </form>
 {% endblock content %}

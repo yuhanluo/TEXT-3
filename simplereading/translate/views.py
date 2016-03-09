@@ -17,7 +17,7 @@ def index(request):
 
 
 def result(request, hard_text):
-    form = TestForm()
+    form = TestForm(initial={'original_text': hard_text})
     if 'original_text' in request.GET and request.GET["original_text"]:
         hard_text = request.GET.get("original_text")
         return redirect('result', hard_text)
