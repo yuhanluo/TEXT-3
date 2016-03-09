@@ -3,11 +3,11 @@
 <table  >
 <form class="search-form" method="GET" >{% csrf_token %}
     <tr>
-        <td>{{ form.as_p }}</td>
-        <td><textarea rows="20" cols="80" >{{ hard_text|linebreaksbr }}</textarea></td>
+        <td><input type="submit" value="Simplify" style="float: right" ></td>
     </tr>
     <tr>
-        <td><input type="submit" value="Simplify"  ></td>
+        <td>{{ form.as_p }}</td>
+        <td><textarea rows="20" cols="80" >{{ hard_text|linebreaksbr }}</textarea></td>
     </tr>
 </form>
 </table>

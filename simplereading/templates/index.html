@@ -3,14 +3,13 @@
 {% block content %}
 <table id="h3_color" >
 <form class="search-form" method="GET" >{% csrf_token %}
-   
-      <tr>
-          <td>{{ form.as_p }}</td>
-          <td><textarea rows="20" cols="80" ></textarea></td>
-      </tr>
-      <tr>
-          <td><input type="submit" value="Simplify"  ></td>
-      </tr></form>
-
-    </table>
+    <tr>
+        <td><input type="submit" style="float: right" value="Simplify"  ></td>
+    </tr>
+    <tr>
+        <td>{{ form.as_p }}</td>
+        <td><textarea rows="20" cols="80" ></textarea></td>
+    </tr>
+</form>
+</table>
 {% endblock content %}
