@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+{% block content %} 
+{% csrf_token %}
+<h2 id="h3_color">Original Text</h2><br/>
+<h3>{{ orig.hard_text }}</h3><br/>
+<form method="POST" >{% csrf_token %}
+    {{ form.as_p }}<br/>
+    <input type="submit" value="submit"  />
+</form><br />
+
+<h2>See also:</h2>
+{% for result in results %}
+<ul>
+    <li><h3>{{ result.simple_text }}</h3></li>
+</ul>
+{% endfor %}
+<br/>
+{% endblock content %}
