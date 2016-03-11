@@ -11,7 +11,7 @@
 <h2>See also:</h2>
 {% for result in results %}
 <ul>
-    <li><h3>{{ result.simple_text }}</h3></li>
+    <li><h3>{{ result.simple_text }}   <a href="{% url 'edit_simp' pk=result.id %}">edit</a></h3></li>
 </ul>
 {% endfor %}
 <br/>

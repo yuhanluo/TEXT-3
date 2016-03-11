@@ -46,4 +46,14 @@ def add_simp(request, pk):
         return render(request, 'add_simp.html', {'results': results, 'orig' : orig, 'form': form})
 
 
+def edit_simp(request, pk):
+    simp = Simple.objects.get(pk=pk)
+    form = SimpForm(initial={'simple_text': simp.simple_text})
+    new_simple_text = request.POST.get("simple_text")
+    if request.method =="POST":
+        simp.simple_text = new_simple_text
+        simp.save()
+        return redirect('add_simp', simp.hard.id )
+    else:
+        return render(request, 'edit_simp.html', {'form' : form})
 
