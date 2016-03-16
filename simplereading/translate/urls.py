@@ -10,5 +10,6 @@ urlpatterns = [
                 url(r'^contribute/', views.contribute, name='contribute'),
                 url(r'^add_simp/(?P<pk>\d+)/$', views.add_simp, name='add_simp'),
                 url(r'^edit_simp/(?P<pk>\d+)/$', views.edit_simp, name='edit_simp'),
+                url(r'^add_origin/', views.add_origin, name='add_origin'),
                
                ]

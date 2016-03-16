@@ -1,7 +1,12 @@
 {% extends 'base.html' %} 
 {% block content %} 
 {% csrf_token %}
-<h2 id="h3_color">Original Text</h2><br/>
+<table>
+    <tr>
+        <td><h2 id="h3_color">Original Text</h2></td>
+        <td><a href="{% url 'add_origin' %}">add new original sentence</a></td>
+    </tr>
+</table>
 {% for origin in origins %}
 <ul>
     <li><a href="{% url 'add_simp' pk=origin.id %}">{{ origin.hard_text }}</a></li>

@@ -57,3 +57,17 @@ def edit_simp(request, pk):
     else:
         return render(request, 'edit_simp.html', {'form' : form})
 
+def add_origin(request):
+    hard_text = request.POST.get("hard_text")
+    if request.method =="POST":
+        save_form = OriginForm(request.POST)
+        if save_form.is_valid():
+            orig = save_form.save(commit=False)
+            orig.hard_text = hard_text
+            orig.save()
+            origins = Original.objects.all()
+        return redirect('contribute')
+    else:
+        form = OriginForm()
+        return render(request, 'add_origin.html', { 'form':form })
+
