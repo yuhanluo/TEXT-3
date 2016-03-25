@@ -1,8 +1,9 @@
 
 {% extends 'base.html' %}
 {% block content %}
+<h1 id="h1_title">Intend for people to write/understand texts in a simple way </h1>
 <table id="h3_color" >
-<form class="search-form" method="GET" >{% csrf_token %}
+<form class="search-form" method="GET" name="input text you want to simplify">{% csrf_token %}
     <tr>
         <td><input type="submit" style="float: right" value="Simplify"  /></td>
     </tr>

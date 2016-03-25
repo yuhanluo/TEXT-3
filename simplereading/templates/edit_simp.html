@@ -1,7 +1,10 @@
 {% extends 'base.html' %} 
 {% block content %} 
 {% csrf_token %}
-<form method="POST" >{% csrf_token %}
+<br/>
+<h1 id="h1_contribute">Edit this simplified sentence:</h1><br/>
+<br/><br/>
+<form method="POST" name="edit simplified text" >{% csrf_token %}
     {{ form.as_p }}<br/>
     <input type="submit" value="submit"  />
 </form><br />

@@ -1,15 +1,22 @@
 {% extends 'base.html' %} 
 {% block content %} 
 {% csrf_token %}
-<table>
-    <tr>
-        <td><h2 id="h3_color">Original Text</h2></td>
-        <td><a href="{% url 'add_origin' %}">add new original sentence</a></td>
-    </tr>
-</table>
+<br/>
+<h1 id="h1_title" style="border-style: solid">In this page, you can simplify original text choosed from below. Or you can input
+    original texts and let other users simplify it. </h1>
+<br/><HR/><br/>
+
+<h2>  You can add original sentence here: <a href="{% url 'add_origin' %}">add new original sentence</a></h2><br/>
+
+<HR/><br/>
+
+{% if origins %}
+<h1 id="h1_contribute">Choose original text from below and simplify it:</h1><br/>
+<h2>Original Text:</h2>
 {% for origin in origins %}
 <ul>
     <li><a href="{% url 'add_simp' pk=origin.id %}">{{ origin.hard_text }}</a></li>
 </ul>
-{% endfor %}<br/>
+{% endfor %}
+{% endif %}<br/>
 {% endblock content %}
