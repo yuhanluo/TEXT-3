@@ -1,14 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 id="h1_title">Intend for people to write/understand texts in a simple way </h1>
+<h1 id="h1_title">Intend for people to write/understand texts in a simple way </h1><br/>
 <table  >
 <form class="search-form" method="GET" name="input text you want to simplify">{% csrf_token %}
     
     <tr>
-        <td><input type="submit" value="Simplify" style="float: right" ></td>
-    </tr>
-    <tr>
-        <td><p>Please inpute original text here:</p>{{ form.as_p }}</td>
+        <td><p>Please inpute original text here:<input type="submit" value="Simplify" style="float: right" ></p>{{ form.as_p }}</td>
         <td><p>Sinplified:</p><textarea rows="5" cols="60" wrap="hard" readonly="yes" name="text after simplified">{{ simple }}
         </textarea>
         </td>
