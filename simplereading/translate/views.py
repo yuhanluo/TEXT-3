@@ -23,24 +23,31 @@ def result(request, hard_text):
         hard_text = request.GET.get("original_text")
         return redirect('result', hard_text)
     elif request.method == "POST":
-        comment = request.POST.get("comment")
-        votes = request.POST.get("votes")
-        comment_form = CommentForm(request.POST)
-        history_form = SimplifyForm()
-        if comment_form.is_valid():
-            try:
-                history = Simplify.objects.get(input=hard_text, output=simple)
-            except Simplify.DoesNotExist:
-                history =history_form.save(commit=False)
-                history.input = hard_text
-                history.output=simple
-                history.save()
-            com = comment_form.save(commit=False)
-            com.history = history
-            com.comment = comment
-            com.save()
-            comments = Comment.objects.filter(history=history.id)
-            return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc, 'com':comments})
+        if 'comment' in request.POST:
+            comment = request.POST.get("comment")
+            comment_form = CommentForm(request.POST)
+            history_form = SimplifyForm()
+            if comment_form.is_valid():
+                try:
+                    history = Simplify.objects.get(input=hard_text, output=simple)
+                except Simplify.DoesNotExist:
+                    history =history_form.save(commit=False)
+                    history.input = hard_text
+                    history.output=simple
+                    history.save()
+                    com = comment_form.save(commit=False)
+                    com.history = history
+                    com.comment = comment
+                    com.save()
+                    comments = Comment.objects.filter(history=history.id)
+                    return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc, 'com':comments})
+            else:
+                try:
+                    history = Simplify.objects.get(input=hard_text, output=simple)
+                except Simplify.DoesNotExist:
+                    return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc})
+                comments = Comment.objects.filter(history=history.id)
+                return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc, 'com':comments})
     else:
         try:
             history = Simplify.objects.get(input=hard_text, output=simple)
@@ -84,6 +91,8 @@ def add_simp(request, pk):
                     v.votes=1
                     v.save()
             vote_result = Vote.objects.get(hard=orig, simple=simple)
+            return render(request, 'add_simp.html', {'results': results, 'orig' : orig, 'form': form})
+        else:
             return render(request, 'add_simp.html', {'results': results, 'orig' : orig, 'form': form})
     else:
         return render(request, 'add_simp.html', {'results': results, 'orig' : orig, 'form': form})
