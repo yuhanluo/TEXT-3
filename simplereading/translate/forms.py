@@ -3,7 +3,7 @@ from .models import Simple, Original, Vote, Simplify, Comment
 from django.utils.safestring import mark_safe
 
 class OriginForm(forms.ModelForm):
-    hard_text = forms.CharField(widget=forms.Textarea(attrs={'rows':5, 'cols':60}), label='')
+    hard_text = forms.CharField(widget=forms.Textarea(attrs={'rows':20, 'cols':80}), label='')
     class Meta:
         model = Original
         fields = ('hard_text',)

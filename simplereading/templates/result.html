@@ -14,8 +14,8 @@
 </table>
 </br>
 <form name="leave a comment" method="POST" >{% csrf_token %}
-    <p>Leave a comment:</p>{{ formc.as_p }}<br />
-    <input type="submit" value="submit"  />
+    <p>    Leave a comment:</p>{{ formc.as_p }}<br />
+       <input type="submit" value="submit"  />
 </form><br/><br/>
 {% if com %}
 <h2>Comments:</h2><br/>
