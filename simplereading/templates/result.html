@@ -8,8 +8,8 @@
         <td><input type="submit" value="Simplify" style="float: right" ></td>
     </tr>
     <tr>
-        <td>{{ form.as_p }}</td>
-        <td><textarea rows="20" cols="80" wrap="hard" readonly="yes" name="text after simplified">{{ simple }}
+        <td><p>Please inpute original text here:</p>{{ form.as_p }}</td>
+        <td><p>Sinplified:</p><textarea rows="5" cols="60" wrap="hard" readonly="yes" name="text after simplified">{{ simple }}
         </textarea>
         </td>
     </tr>
@@ -17,7 +17,7 @@
 </table>
 </br>
 <form name="leave a comment" method="POST" >{% csrf_token %}
-    {{ formc.as_p }}<br />
+    <p>Leave a comment:</p>{{ formc.as_p }}<br />
     <input type="submit" value="submit"  />
 </form><br/><br/>
 {% if com %}
