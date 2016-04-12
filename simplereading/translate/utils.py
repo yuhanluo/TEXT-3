@@ -79,7 +79,6 @@ def simplify(s, min_frequent=100, min_frequent_diff = 1.2):
 					c_f_list = zip(candidate_list, freq_list)
 					ordered_list = sorted(c_f_list, key=lambda c_f_list:c_f_list[1], reverse=True)
                     ordered_list = [w for w in ordered_list if word_freq * min_frequent_diff < w[1]] #remove if candidate word frequency does not exceed the word frequency by a threshold
-
 					word_freq = fdist[word]
 		#			synonmys = f.getSynonmys(word)  ## get synonmys from wordnet
 					# print synonmys
