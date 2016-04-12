@@ -88,5 +88,6 @@ def simplify(s, min_frequent=100, min_frequent_diff = 1.2):
 							# 	for syn in synonmys:
 							# 		if st.stem(w[0]) == st.stem(syn):
 							# 			word = w[0]
+                            break
 		res = res + word + ' '	
-	return res
+	return res, process

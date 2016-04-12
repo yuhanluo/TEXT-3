@@ -18,7 +18,7 @@ def index(request):
 def result(request, hard_text):
     form = TestForm(initial={'original_text': hard_text})
     formc = CommentForm()
-    simple = utils.simplify(hard_text)
+    simple, process = utils.simplify(hard_text)
     if 'original_text' in request.GET and request.GET["original_text"]:
         hard_text = request.GET.get("original_text")
         return redirect('result', hard_text)
@@ -40,21 +40,21 @@ def result(request, hard_text):
                     com.comment = comment
                     com.save()
                     comments = Comment.objects.filter(history=history.id)
-                    return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc, 'com':comments})
+                    return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc, 'com':comments, 'process':process})
             else:
                 try:
                     history = Simplify.objects.get(input=hard_text, output=simple)
                 except Simplify.DoesNotExist:
-                    return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc})
+                    return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc,'process':process})
                 comments = Comment.objects.filter(history=history.id)
-                return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc, 'com':comments})
+                return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc, 'com':comments,'process':process})
     else:
         try:
             history = Simplify.objects.get(input=hard_text, output=simple)
         except Simplify.DoesNotExist:
-            return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc})
+            return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc,'process':process})
         comments = Comment.objects.filter(history=history.id)
-        return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc, 'com':comments})
+        return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc, 'com':comments,'process':process})
 
 def contribute(request):
     origins = Original.objects.all()
