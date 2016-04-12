@@ -58,17 +58,17 @@ def simplify_old(s):
 
 def simplify(s, min_frequent=100, min_frequent_diff = 1.2):
 	res = ''
-    process = ''
+    	process = ''
 	st = LancasterStemmer()
 
 	text = nltk.word_tokenize(s)
 	tags = nltk.pos_tag(text)
 
 	for tag in tags:
-        word = tag[0]
-        replace = False
-        top_words = []
-
+		word = tag[0]
+        	replace = False
+        	top_words = []
+            
 		if f.checkPos(tag[1]):
 			if word in model:
 				if fdist[word] < min_frequent:  ## the min frequent less than 
@@ -78,7 +78,7 @@ def simplify(s, min_frequent=100, min_frequent_diff = 1.2):
 					freq_list = [fdist[w] for w in candidate_list]
 					c_f_list = zip(candidate_list, freq_list)
 					ordered_list = sorted(c_f_list, key=lambda c_f_list:c_f_list[1], reverse=True)
-                    ordered_list = [w for w in ordered_list if word_freq * min_frequent_diff < w[1]] #remove if candidate word frequency does not exceed the word frequency by a threshold
+                    			ordered_list = [w for w in ordered_list if word_freq * min_frequent_diff < w[1]] #remove if candidate word frequency does not exceed the word frequency by a threshold
 					word_freq = fdist[word]
 		#			synonmys = f.getSynonmys(word)  ## get synonmys from wordnet
 					# print synonmys
@@ -93,7 +93,8 @@ def simplify(s, min_frequent=100, min_frequent_diff = 1.2):
 							# 			word = w[0]
                             replace = True
                             break
-        res = res + word + ' '
+		res = res + word + ' '
         if replace is True:
             process = process + str(top_words) + '\n'
-    return res, process
+                
+	return res, process
