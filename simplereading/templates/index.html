@@ -6,8 +6,8 @@
 <form class="search-form" method="GET" name="input text you want to simplify">{% csrf_token %}
     
     <tr>
-        <td><p>Please inpute original text here:<input type="submit" style="float: right" value="Simplify"  /></p>{{ form.as_p }}</td>
-        <td><p>Sinplified:</p><textarea rows="5" cols="60" ></textarea></td>
+        <td><label ><p>  Please inpute original text here:<input type="submit" style="float: right" value="Simplify"  /></p></label>{{ form.as_p }}</td>
+        <td><label><p>Sinplified:</p></label><textarea rows="5" cols="60" ></textarea></td>
     </tr>
 </form>
 </table>
