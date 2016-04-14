@@ -9,24 +9,17 @@
         
         <td><label for="simplified_text"><p>Simplified:</p></label>
         </td>
-        
-        <td><h2>Process:</h2>
-            
-        </td>
     </tr>
     <tr>
         <td>{{ form.as_p }}</td>
         <td><textarea rows="5" cols="60" wrap="hard" readonly="yes" name="text after simplified" id="simplified_text">{{ simple }}
         </textarea></td>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td><p>{{ process }}</p></td>
-    </tr>
 </form>
 </table>
 </br>
+<h2>Process:</h2>
+<p style="border-style:dashed">{{ process }}</p><br/><br/>
 <form method="POST" >{% csrf_token %}
     <label for="id_comment"><p>    Leave a comment:</p></label>{{ formc.as_p }}<br />
        <input type="submit" value="submit"  />
