@@ -5,21 +5,30 @@
 <form class="search-form" method="GET" name="input text you want to simplify">{% csrf_token %}
     
     <tr>
-        <td><label><p>Please inpute original text here:<input type="submit" value="Simplify" style="float: right" ></p></label>{{ form.as_p }}</td>
+        <td><label for="id_original_text"><p>Please inpute original text here:<input type="submit" value="Simplify" style="float: right" ></p></label></td>
         
-        <td><label><p>Simplified:</p></label><textarea rows="5" cols="60" wrap="hard" readonly="yes" name="text after simplified">{{ simple }}
-        </textarea>
+        <td><label for="simplified_text"><p>Simplified:</p></label>
         </td>
         
         <td><h2>Process:</h2>
-            <p>{{ process }}</p>
+            
         </td>
+    </tr>
+    <tr>
+        <td>{{ form.as_p }}</td>
+        <td><textarea rows="5" cols="60" wrap="hard" readonly="yes" name="text after simplified" id="simplified_text">{{ simple }}
+        </textarea></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td><p>{{ process }}</p></td>
     </tr>
 </form>
 </table>
 </br>
 <form method="POST" >{% csrf_token %}
-    <label><p>    Leave a comment:</p></label>{{ formc.as_p }}<br />
+    <label for="id_comment"><p>    Leave a comment:</p></label>{{ formc.as_p }}<br />
        <input type="submit" value="submit"  />
 </form><br/><br/>
 {% if com %}
