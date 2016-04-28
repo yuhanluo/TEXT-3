@@ -96,6 +96,6 @@ def simplify(s, min_frequent=100, min_frequent_diff = 1.2):
                             				break
 		res = res + word + ' '
 		if replace is True:
-			process = process + word + ' : ' + str(top_words) + '\n'
+			process = process + tag[0] + ' : ' + str(top_words) + '\n'
                 
 	return res, process
