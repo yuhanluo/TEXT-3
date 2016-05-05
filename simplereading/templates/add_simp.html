@@ -13,7 +13,7 @@
 <form name="vote for results" method="POST" >{% csrf_token %}
     <label for="vote"><h2 id="h3_color">Other simplified version:</h2></label>
     {% for result in results %}
-    <h3><input type="checkbox" value={{ result }} name="votes" id="vote">  {{ result.simple_text }}   </input><a href="{% url 'edit_simp' pk=result.id %}">edit</a></h3>
+    <h3><input type="checkbox" value={{ result.simple_text }} name="votes" id="vote">  {{ result.simple_text }}   </input><a href="{% url 'edit_simp' pk=result.id %}">edit</a></h3>
     {% endfor %}
     <br/>
     <input type="submit" value="Vote" />

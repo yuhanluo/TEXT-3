@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Simple, Original, Vote, Simplify, Comment
 from .forms import OriginForm, SimpForm, TestForm, CommentForm, SimplifyForm, VoteForm
 from django.core.urlresolvers import reverse
-import functions, utils
+#import functions, utils
 
 
 def index(request):
@@ -18,7 +18,8 @@ def index(request):
 def result(request, hard_text):
     form = TestForm(initial={'original_text': hard_text})
     formc = CommentForm()
-    simple, process = utils.simplify(hard_text)
+    simple = hard_text###
+    process = "prooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooocess"###
     if 'original_text' in request.GET and request.GET["original_text"]:
         hard_text = request.GET.get("original_text")
         return redirect('result', hard_text)
@@ -40,7 +41,7 @@ def result(request, hard_text):
                     com.comment = comment
                     com.save()
                     comments = Comment.objects.filter(history=history.id)
-                    return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc, 'com':comments, 'process':process})
+                    return render(request, 'result.html', {'simple': simple, 'form' : form, 'formc':formc, 'com':comments,'process':process})
             else:
                 try:
                     history = Simplify.objects.get(input=hard_text, output=simple)
