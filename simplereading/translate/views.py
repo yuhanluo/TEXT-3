@@ -18,7 +18,7 @@ def index(request):
 def result(request, hard_text):
     form = TestForm(initial={'original_text': hard_text})
     formc = CommentForm()
-    simple = simplify(hard_text)
+    simple = utils.simplify(hard_text)
     process = process
     if 'original_text' in request.GET and request.GET["original_text"]:
         hard_text = request.GET.get("original_text")
